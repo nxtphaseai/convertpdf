@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Default": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\your-local-pdf-file.pdf\""
+    },
+    "Test": {
+      "commandName": "Project",
+      "commandLineArgs": "arg1 arg2 - rename .example.json to .json"
+    }
+  }
+}

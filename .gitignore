@@ -1,0 +1,38 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Config & secrets
+*.config
+*.launchSettings.json
+*.secret.json
+appsettings.*.json.local
+secrets.json
+
+## OS junk
+[Dd]esktop.ini
+[Tt]humbs.db
+*.DS_Store
+
+## Others
+*.swp
+*.bak
+*.tmp
+*.lock
+
+## Dotnet artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+ConvertPdf/ConvertPdf/appsettings.json
+ConvertPdf/ConvertPdfConsole/Properties/launchSettings.json

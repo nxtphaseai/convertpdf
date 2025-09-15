@@ -1,0 +1,6 @@
+@ConvertPdf_HostAddress = http://localhost:5050
+
+GET {{ConvertPdf_HostAddress}}/pdf/
+Accept: application/json
+
+###

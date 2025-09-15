@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<Target Name="CustomActionsBeforePublish" BeforeTargets="BeforePublish">
+		<Exec Command="del C:\Deploys\deploy_convertpdf.zip" />
+		<Message Text="* BeforePublish: delete old zip files *" Importance="high" />
+	</Target>
+
+	<Target Name="CustomActionsAfterPublish" AfterTargets="Publish">
+		<Message Text="*** CustomActionsAfterPublish ***" Importance="high" />
+	</Target>
+
+	<Target Name="PostPublish" AfterTargets="AfterPublish">
+		<Exec Command="C:\Technology\7za920\7za a C:\Deploys\deploy_convertpdf.zip C:\Deploys\ConvertPdf" />
+		<Message Importance="high" Text="* New zip files created *" />
+		<Message Text="*** nu deploy_convertpdf.zip naar de server kopieren ***" Importance="high" />
+		<Message Text="*** nu naar server en dan deployConvertPdf ***" Importance="high" />
+	</Target>
+
+	<ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReadPdf\ReadPdf.csproj" />
+  </ItemGroup>
+
+</Project>
