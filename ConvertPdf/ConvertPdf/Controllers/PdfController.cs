@@ -57,12 +57,12 @@ namespace ConvertPdf.Controllers
             var extractor = new ReadPdf.PdfTableTextExtractor();
             var pagesOutput = extractor.Extract(doc);
 
-            var textNorm = new ReadPdf.DocumentJsonNormalizer
+            var jsonNorm = new ReadPdf.DocumentJsonNormalizer
             {
                 JustHeaderAndTable = true
             };
 
-            var obj = textNorm.Render(pagesOutput);
+            var obj = jsonNorm.Render(pagesOutput);
             return Ok(obj);
         }
 
